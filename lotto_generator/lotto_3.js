@@ -1,4 +1,6 @@
-window.addEventListener("load", function(){
+
+window.addEventListener("load", function()
+{
     var generateBtn = document.querySelector(".generate-btn");
     generateBtn.addEventListener("click", function(){
       generateLottoBalls(7);
@@ -6,6 +8,7 @@ window.addEventListener("load", function(){
   });
   
   function generateLottoBalls(size){
+
     var template = document.querySelector("#lotto-ball-template");
     var lottoBallDiv = template.content.children[0];
     var lottoWrapperDiv = document.querySelector(".lotto-wrapper");

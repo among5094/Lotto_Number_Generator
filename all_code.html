@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lotto generator</title>
-    
+
     <style>
 
         * {
@@ -13,25 +14,56 @@
         }
 
         body {
+
             margin: 0;
             padding: 0;
+
+            /*계산기 코드 가져온 부분*/
+            box-sizing: border-box; 
+            background-color: rgb(209, 214, 135);
+            display: flex; /*flex는 가로 방향으로 배치됨, 자신이 가진 내용물의 width만큼 차지함 유연하게 요소를 배치할 수 있다는 뜻이다.*/
+            flex-direction: column; /*아이템을 열(세로,row)방향으로 배치함, 마치 요소들을 쌓아놓은 것 처럼 보임!! */
+            justify-content: center;/* Align the flex items at the center of the container, 컨테이너에 있는 플렉스 아이템을 가운데로 정렬함*/
+            align-items: center; /* 교차축을 기준으로 아이템을 정렬함 */
+
+            /*배경 사진에 대한 것
+            배경 이미지 조절(background-repeat에 대한 명령어 링크:https://m.blog.naver.com/mathesis_time/221663530512 */
+            background-image: url('로또기계사진1.jpg');
+            background-repeat: no-repeat; /* 배경 사진 반복 x*/
+            background-size : cover; /*브라우저 창에 알맞게 배경 사진이 맞춰지는 것*/
         }
 
-        .lotto-wrapper>.lotto-ball {
+        /*
+        wrapper이 뭘까? 둘다 레이아웃을 위한 div지만
+        container는 주로 여러 개의 요소를 감싸는 div이고,
+        wrapper는 단일 요소의 레이아웃을 위한 div를 말한다.
+        이름 지을때 씀
+        */
+
+        /* class 복합선택자
+        첫 번째 참고 링크: https://www.nextree.co.kr/p8468/
+        하위 선택자는  space 이고 ex) body ul : body요소의 "자손(자식의 자식)"이 ul인 것을 선택함
+        자식 선택자는 > 이다. ex) body>ul  : body요소의 "자식"이 ul인 것을 선택함
+        +) 자식과 자손에 대한 설명 링크: https://lktprogrammer.tistory.com/98
+        
+        */
+
+
+        .lotto-wrapper>.lotto-ball { /*wrapper는 naming할 때 단일 요소의 레이아웃을 위한 div를 말한다.*/
             font-size: 30px;
             width: 3em;
             height: 3em;
 
-            display: inline-flex;
+            display: inline-flex; 
             justify-content: center;
             align-items: center;
-
             border-radius: 50%;
-
             position: relative;
         }
 
-        
+
+
+
         .lotto-wrapper>.lotto-ball>.number {
             flex-grow: 1;
             text-align: center;

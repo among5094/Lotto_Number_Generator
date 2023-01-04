@@ -2,21 +2,36 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator&#128176;</title>
+    <title>Lotto Generator&#128176;</title>
+    
     <!--스타일시트 파일 참조 -->
     <link rel="stylesheet" href="lotto_2.css">
+    <!--<link> 태그의 rel 속성은 현재 문서와 외부 리소스 사이의 연관 관계를 명시함
+    관련 링크: http://www.tcpschool.com/html-tag-attrs/link-rel
+    stylesheet: 스타일 시트로 사용할 외부 리소스를 불러온다는 뜻 -->
+
 </head>
 <body>
+  
     <template id="lotto-ball-template">
+    <!-- template: HTML과 data를 섞어서 html 화면에 변화를 주는 것.
+    반복적인 HTML 부분을 template로 만들어두고, 서버에서 온 데이터(주로JSON)을 결합해서, 화면에 추가하는 작업
+    관련 링크: https://youngbae10000.tistory.com/50 -->
+
         <div class="lotto-ball">
-          <div class="number">?</div>
+          <div class="number"></div> 
           <div class="shadow"></div>
         </div>
-      </template>
 
-      <button class="generate-btn">드가좌~~~!!</button>
+    </template>
+      <br><br> <!-- br은 줄바꿈 -->
       
-      <div class="lotto-wrapper"></div>
+      <!-- 뽑기가 시작되는 버튼 -->
+      <button class="generate-btn">가즈아~~~~~~!!!</button> <!--버튼 영역-->
+      <br><br><br><br>
+
+      <!-- 로또 공이 굴러가는 부분 -->
+      <div class="lotto-wrapper"></div> 
 
       <!--자바스크립트 파일 참조 -->
       <script src="lotto_3.js"></script>
